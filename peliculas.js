@@ -1,3 +1,5 @@
+
+
 // 
 
 function bienvenidx(){
@@ -5,10 +7,9 @@ function bienvenidx(){
     alert("Bienvenidx al Club del VHS, "+ nombre)
 }
 
-let x;
-// let genero = prompt("Qué genero de pelicula querés ver?");
 
 function peliculaRandom (genero){
+    let x;
     switch(genero) {
         case "terror":
             x = "Get Out: Un joven va por primera vez a la casa de sus futuros suegros, una serie de descubrimientos hacen ese encuentro inquietante";
@@ -25,7 +26,12 @@ function peliculaRandom (genero){
     default:
         x = "Podes probar con: terror, comedia, sci-fi o crimen";
     }
+    return x;
 }
 bienvenidx();
-peliculaRandom(genero=prompt("Qué genero de pelicula querés ver?"))
-alert(x);
+let genero = prompt("Qué genero de pelicula querés ver?  \n ingrese % para salir");
+while (genero != "&"){
+    resultado = peliculaRandom(genero);
+    alert("Tu peli random del día es: " + resultado)
+    genero = prompt("Qué genero de pelicula querés ver?  \n ingrese % para salir");
+}
